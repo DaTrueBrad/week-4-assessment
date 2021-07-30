@@ -15,4 +15,14 @@ def sales_reports(log_file):
             # ...and print out the line of information!
 
 sales_reports(log_file)
-# This calls the function listed above, and tells it to use the open file's variable as the parameter.
+
+log_file.close()
+log_file = open("um-server-01.txt")
+def melon_report(log_file):
+    for line in log_file:
+        line = line.rstrip()
+        amount = float(line[16:18])
+        if amount > 10:
+            print(line)
+
+melon_report(log_file)
